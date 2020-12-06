@@ -31,7 +31,7 @@ phases:
       # - sudo chmod +x detection.py
       # - sudo chmod + functions.py
       # - sudo chmod +x indicators.py
-      - python3 index.py --dir test
+      - python3 index.py --dir test/ --plain
   build:
     commands:
       - echo Entered the build phase...
