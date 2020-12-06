@@ -16,7 +16,7 @@ if [ ! -d "$CACHE_DIRECTORY" ]; then
 fi
 
 # Make sure we are using the latest version
-docker pull owasp/dependency-check
+docker pull owasp/dependency-check:$DC_VERSION
 
 docker run --rm \
     -e user=$USER \
@@ -24,7 +24,7 @@ docker run --rm \
     --volume $(pwd):/src:z \
     --volume "$DATA_DIRECTORY":/usr/share/dependency-check/data:z \
     --volume $(pwd)/odc-reports:/report:z \
-    owasp/dependency-check \
+    owasp/dependency-check:$DC_VERSION \
     --scan /src \
     --format "ALL" \
     --project "$DC_PROJECT" \
