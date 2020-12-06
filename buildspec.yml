@@ -2,11 +2,12 @@ version: 0.2
 
 phases:
   install:
-  - sudo yum update -y
-  - sudo yum install python -y
-  - sudo yum install python3 -y 
-  - sudo yum install python-pip -y
-  - sudo yum install python3-pip -y
+    commands:
+      - sudo yum -y update
+      - sudo yum -y install python
+      - sudo yum -y install python3 
+      - sudo yum -y install python-pip
+      - sudo yum -y install python3-pip
   pre_build:
     commands: 
       - echo Project is going to be started
