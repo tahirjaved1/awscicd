@@ -27,11 +27,11 @@ phases:
       - sudo rm Vulny-Code-Static-Analysis/ || true
       - git clone https://github.com/swisskyrepo/Vulny-Code-Static-Analysis
       - cd Vulny-Code-Static-Analysis/
-      - sudo chmod +x index.py 
-      - sudo chmod +x detection.py
-      - sudo chmod + functions.py
-      - sudo chmod +x indicators.py
-      - sudo python3 index.py --dir test
+      # - sudo chmod +x index.py
+      # - sudo chmod +x detection.py
+      # - sudo chmod + functions.py
+      # - sudo chmod +x indicators.py
+      - python3 index.py --dir test
   build:
     commands:
       - echo Entered the build phase...
