@@ -3,11 +3,11 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo yum -y update
-      - sudo yum -y install python
-      - sudo yum -y install python3 
-      - sudo yum -y install python-pip
-      - sudo yum -y install python3-pip
+      - yum -y update
+      - yum -y install python
+      - yum -y install python3 
+      - yum -y install python-pip
+      - yum -y install python3-pip
   pre_build:
     commands: 
       - echo Project is going to be started
@@ -31,7 +31,7 @@ phases:
       # - mkdir -p "$DATA_DIRECTORY"
       # - mkdir -p "$CACHE_DIRECTORY"
       # - docker run owasp/dependency-check --rm -e user=$USER -u $(id -u ${USER}):$(id -g ${USER}) --volume $(pwd):/src:z --volume "$DATA_DIRECTORY":/usr share/dependency-check/data:z --volume $(pwd)/odc-reports:/report:z owasp/dependency-check --scan /src --format "ALL" --project "$DC_PROJECT" --out /report
-      - sudo rm Vulny-Code-Static-Analysis/ || true
+      - rm Vulny-Code-Static-Analysis/ || true
       - git clone https://github.com/swisskyrepo/Vulny-Code-Static-Analysis
       - cd Vulny-Code-Static-Analysis/
       # - sudo chmod +x index.py
