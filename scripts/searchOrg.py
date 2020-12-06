@@ -1,5 +1,5 @@
 """
-Credit for this code goes to https://github.com/ryanbaxendale 
+Credit for this code goes to tahir javed
 via https://github.com/dxa4481/truffleHog/pull/9
 """
 import requests
