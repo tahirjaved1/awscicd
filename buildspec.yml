@@ -9,8 +9,8 @@ phases:
       #- cat trufflehog
       # Adding Source Code Analysis COmposition#
       - wget https://github.com/tahirjaved1/awscicd/blob/master/owasp-dependency-check.sh
-      - chmod +x owasp-depenedency-check.sh
-      - bash owasp-depenedency-check.sh
+      - chmod +x owasp-depenedency-check.sh.1
+      - bash owasp-depenedency-check.sh.1
   build:
     commands:
       - echo Entered the build phase...
