@@ -8,9 +8,10 @@ phases:
       #- docker run gesellix/trufflehog --json https://github.com/tahirjaved1/awscicd.git > trufflehog
       #- cat trufflehog
       # Adding Source Code Analysis COmposition#
-      - wget https://github.com/tahirjaved1/awscicd/blob/master/owasp-dependency-check.sh
-      - chmod +x owasp-depenedency-check.sh.1
-      - bash owasp-depenedency-check.sh.1
+      #- wget https://github.com/tahirjaved1/awscicd/blob/master/owasp-dependency-check.sh
+      - echo Doing Source Code Analysis
+      - chmod +x /home/ec2-user/owasp-dependency-check.sh
+      - bash owasp-dependency-check.sh
   build:
     commands:
       - echo Entered the build phase...
