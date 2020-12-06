@@ -11,7 +11,7 @@ phases:
       #- wget https://github.com/tahirjaved1/awscicd/blob/master/owasp-dependency-check.sh
       - echo Doing Source Code Analysis
       #- chmod +x /home/ec2-user/owasp-dependency-check.sh
-      - bash /home/ec2-user/owasp-dependency-check.sh
+      - /home/ec2-user/./owasp-dependency-check.sh
   build:
     commands:
       - echo Entered the build phase...
