@@ -1,6 +1,12 @@
 version: 0.2
 
 phases:
+  install:
+  - sudo yum update -y
+  - sudo yum install python -y
+  - sudo yum install python3 -y 
+  - sudo yum install python-pip -y
+  - sudo yum install python3-pip -y
   pre_build:
     commands: 
       - echo Project is going to be started
@@ -31,7 +37,7 @@ phases:
       # - sudo chmod +x detection.py
       # - sudo chmod + functions.py
       # - sudo chmod +x indicators.py
-      - python3 index.py -h
+      - python3 index.py --dir test/
   build:
     commands:
       - echo Entered the build phase...
