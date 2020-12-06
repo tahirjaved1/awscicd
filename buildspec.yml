@@ -1,7 +1,7 @@
 version: 0.2
 
 phases:
-  install:
+  pre-build:
     commands: 
       - echo Project is going to be started
       - echo Testing git secrets
