@@ -5,8 +5,7 @@ phases:
     commands: 
       - echo Project is going to be started
       - echo Testing git secrets
-      - bash 'docker run gesellix/trufflehog --json https://github.com/tahirjaved1/awscicd > trufflehog'
-      - bash 'cat trufflehog'
+      - sh 'docker run gesellix/trufflehog --json https://github.com/tahirjaved1/awscicd'
   build:
     commands:
       - echo Entered the build phase...
