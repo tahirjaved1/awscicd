@@ -1,6 +1,12 @@
 version: 0.2
 
 phases:
+  install:
+    commands: 
+      - echo Project is going to be started
+      - echo Testing git secrets
+      - sh 'docker run gesellix/trufflehog --json https://github.com/tahirjaved1/awscicd > trufflehog'
+      - sh 'cat trufflehog' 
   build:
     commands:
       - echo Entered the build phase...
