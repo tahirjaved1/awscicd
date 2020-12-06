@@ -12,9 +12,18 @@ phases:
       - echo Doing Source Code Analysis
       #- chmod +x /home/ec2-user/owasp-dependency-check.sh
       #- testing 
-      - wget https://raw.githubusercontent.com/tahirjaved1/awscicd/master/source.sh
-      - chmod +x source.sh
-      - bash source.sh
+      # - wget https://raw.githubusercontent.com/tahirjaved1/awscicd/master/source.sh
+      # - chmod +x source.sh
+      # - bash source.sh
+      # - docker pull owasp/dependency-check
+      - DC_VERSION="latest"
+      - DC_DIRECTORY=$HOME/OWASP-Dependency-Check
+      - DC_PROJECT="dependency-check scan: $(pwd)"
+      - DATA_DIRECTORY="$DC_DIRECTORY/data"
+      - CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
+      - mkdir -p "$DATA_DIRECTORY"
+      - mkdir -p "$CACHE_DIRECTORY"
+      - docker run owasp/dependency-check --rm -e user=$USER -u $(id -u ${USER}):$(id -g ${USER}) --volume $(pwd):/src:z --volume "$DATA_DIRECTORY":/usr share/dependency-check/data:z --volume $(pwd)/odc-reports:/report:z owasp/dependency-check --scan /src --format "ALL" --project "$DC_PROJECT" --out /report
   build:
     commands:
       - echo Entered the build phase...
