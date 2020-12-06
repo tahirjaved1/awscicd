@@ -28,7 +28,7 @@ phases:
       - git clone https://github.com/swisskyrepo/Vulny-Code-Static-Analysis
       - cd Vulny-Code-Static-Analysis/
       - chmod +x index.py
-      - python index.py --dir test/
+      - python3 index.py --dir test/
   build:
     commands:
       - echo Entered the build phase...
