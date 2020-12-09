@@ -2,7 +2,7 @@
 steps:
 
 # This step builds the container image.
-- name: 'testing build'
+- name: 'default-push-trigger-1'
   id: Build
   args:
   - 'echo Entered the build phase'
@@ -10,7 +10,7 @@ steps:
 # This step pushes the image to Container Registry
 # The PROJECT_ID and SHORT_SHA variables are automatically
 # replaced by Cloud Build.
-#- name: 'gcr.io/cloud-builders/docker'
+#- name: 'Push to branch'
 #  id: Push
 #  args:
 #  - 'push'
