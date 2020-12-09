@@ -1,18 +1,22 @@
-# [START cloudbuild]
 steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      ["build", "-t", "gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}", "."]
 
-# This step builds the container image.
-- name: 'default-push-trigger-1'
-  id: Build
-  args:
-  - 'echo Entered the build phase'
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/${_SERVICE_NAME}"]
 
-# This step pushes the image to Container Registry
-# The PROJECT_ID and SHORT_SHA variables are automatically
-# replaced by Cloud Build.
-#- name: 'Push to branch'
-#  id: Push
-#  args:
-#  - 'push'
-#  - 'gcr.io/$PROJECT_ID/hello-cloudbuild:$SHORT_SHA'
-# [END cloudbuild]
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "echo testing our build",
+        # "deploy",
+        # "${_SERVICE_NAME}",
+        # "--image",
+        # "gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}",
+        # "--region",
+        # "us-central1",
+        # "--platform",
+        # "managed",
+        # "--allow-unauthenticated",
+      ]
