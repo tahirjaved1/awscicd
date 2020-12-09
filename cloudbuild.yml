@@ -9,14 +9,14 @@ steps:
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       [
-        "echo testing our build",
-        # "deploy",
-        # "${_SERVICE_NAME}",
-        # "--image",
-        # "gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}",
-        # "--region",
-        # "us-central1",
-        # "--platform",
-        # "managed",
-        # "--allow-unauthenticated",
+        "run",
+        "deploy",
+        "${_SERVICE_NAME}",
+        "--image",
+        "gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}",
+        "--region",
+        "us-central1",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
       ]
