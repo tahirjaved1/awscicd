@@ -12,8 +12,8 @@ phases:
     commands: 
       - echo Project is going to be started
       - echo Testing git secrets
-      #- docker run gesellix/trufflehog --json https://github.com/tahirjaved1/awscicd.git > trufflehog
-      #- cat trufflehog
+      - docker run gesellix/trufflehog --json https://github.com/tahirjaved1/awscicd.git > trufflehog
+      - cat trufflehog
       # Adding Source Code Analysis COmposition#
       #- wget https://github.com/tahirjaved1/awscicd/blob/master/owasp-dependency-check.sh
       - echo Doing Source Code Analysis
